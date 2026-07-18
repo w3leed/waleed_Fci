@@ -451,8 +451,9 @@ table.tbl tbody tr:hover { background: #eef5ff; }
 /* ---------- Responsive ---------- */
 
 /* منع أي تجاوز أفقي على الموبايل */
-html, body { max-width: 100%; }
+html, body { max-width: 100%; overflow-x: hidden; }
 img, table, iframe, video { max-width: 100%; }
+.prose { overflow-wrap: anywhere; }
 
 @media (max-width: 992px) {
   .nav { gap: 10px; }
@@ -497,6 +498,7 @@ img, table, iframe, video { max-width: 100%; }
   .dean { grid-template-columns: 1fr; text-align: center; }
   .dean .photo { max-width: 220px; margin: 0 auto; }
   .with-sidebar { grid-template-columns: 1fr; }
+  .with-sidebar > * { min-width: 0; }
   .side-nav { position: static; }
   .vm-grid, .contact-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
