@@ -449,19 +449,48 @@ table.tbl tbody tr:hover { background: #eef5ff; }
 .reveal.in { opacity: 1; transform: none; }
 
 /* ---------- Responsive ---------- */
+
+/* منع أي تجاوز أفقي على الموبايل */
+html, body { max-width: 100%; }
+img, table, iframe, video { max-width: 100%; }
+
 @media (max-width: 992px) {
-  .nav-toggle { display: block; }
-  .menu {
-    position: fixed; inset-block-start: var(--header-h); inset-inline-end: 0;
-    height: calc(100vh - var(--header-h)); width: min(320px, 84vw);
-    background: #fff; flex-direction: column; align-items: stretch;
-    padding: 16px; gap: 4px; box-shadow: var(--shadow-lg); overflow-y: auto;
-    transform: translateX(-110%); transition: transform .3s; border-inline-start: 1px solid var(--line);
+  .nav { gap: 10px; }
+  /* السماح للعلامة بالانكماش حتى لا تتداخل مع زر القائمة */
+  .brand { min-width: 0; flex: 1 1 auto; }
+  .brand .brand-txt { min-width: 0; }
+  .brand .logo-mark { width: 40px; height: 40px; font-size: 16px; }
+  .brand .brand-txt b {
+    font-size: 13px; line-height: 1.3;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+    overflow: hidden;
   }
-  .menu.open { transform: translateX(0) !important; }
-  .menu > li > a { padding: 12px 14px; }
-  .submenu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; padding: 4px 10px 8px; background: var(--bg-soft); }
+  .brand .brand-txt span { font-size: 11px; }
+  .nav-toggle { display: block; flex: none; }
+
+  /* قائمة الموبايل: لوحة تنزلق من اليمين تغطي كامل الارتفاع */
+  .menu {
+    position: fixed; inset-block-start: 0; inset-inline-end: 0;
+    height: 100vh; height: 100dvh; width: min(320px, 86vw);
+    background: #fff; flex-direction: column; align-items: stretch;
+    padding: 76px 14px 24px; gap: 4px; box-shadow: var(--shadow-lg);
+    overflow-y: auto; -webkit-overflow-scrolling: touch;
+    transform: translateX(110%); transition: transform .3s ease; z-index: 130;
+    border-inline-start: 1px solid var(--line);
+  }
+  .menu.open { transform: translateX(0); }
+  /* غطاء معتم خلف القائمة */
+  .menu.open::before {
+    content: ""; position: fixed; inset: 0; inset-inline-end: min(320px, 86vw);
+    background: rgba(10,42,94,.35); z-index: -1;
+  }
+  .menu > li { width: 100%; }
+  .menu > li > a { padding: 13px 14px; font-size: 16px; }
+  .menu > li > a::before { display: none; }
+  .submenu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; padding: 2px 10px 8px; background: var(--bg-soft); border-radius: 10px; margin: 2px 0 6px; min-width: 0; }
   .menu > li.has-sub:hover .submenu { transform: none; }
+  .nav-cta { text-align: center; margin-top: 6px; }
+
   .stats-grid { grid-template-columns: repeat(2,1fr); }
   .grid.cols-4 { grid-template-columns: repeat(2,1fr); }
   .grid.cols-3 { grid-template-columns: repeat(2,1fr); }
@@ -472,17 +501,36 @@ table.tbl tbody tr:hover { background: #eef5ff; }
   .vm-grid, .contact-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .gallery { grid-template-columns: repeat(3,1fr); }
+  /* منع تداخل الشبكات ثنائية العمود المكتوبة inline على الموبايل */
+  .grid.cols-2[style] { grid-template-columns: 1fr !important; }
 }
+
 @media (max-width: 620px) {
+  .topbar .container { justify-content: center; }
   .topbar .tb-info { display: none; }
-  .stats-grid { grid-template-columns: 1fr 1fr; padding: 20px; gap: 12px; }
-  .stat .num { font-size: 32px; }
+  .stats { margin-top: -30px; }
+  .stats-grid { grid-template-columns: 1fr 1fr; padding: 18px; gap: 12px; }
+  .stat .num { font-size: 30px; }
   .grid.cols-2, .grid.cols-3, .grid.cols-4 { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: repeat(2,1fr); }
-  .cta-band { padding: 32px 22px; }
-  .section { padding: 54px 0; }
+  .cta-band { padding: 30px 20px; }
+  .cta-band .grid.cols-2 { grid-template-columns: 1fr !important; }
+  .section { padding: 48px 0; }
+  .page-banner { padding: 44px 0 40px; }
+  .qblock h2 { font-size: 22px; }
+  .prose { font-size: 16px; }
+  /* عنوان العلامة أقصر على الشاشات الصغيرة */
+  .brand .brand-txt b { font-size: 12px; -webkit-line-clamp: 2; }
   .brand .brand-txt span { display: none; }
+  .hero-actions .btn, .cta-band .btn { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 380px) {
+  .brand .logo-mark { width: 36px; height: 36px; font-size: 14px; }
+  .brand .brand-txt b { font-size: 11.5px; }
+  .container { padding: 0 16px; }
+  .stats-grid { grid-template-columns: 1fr; }
 }
 
 /* =========================================================
