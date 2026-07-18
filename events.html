@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الفعاليات - كلية الحاسبات والمعلومات والذكاء الاصطناعي | جامعة اللوتس</title>
+<meta name="description" content="المؤتمرات والندوات وورش العمل والمسابقات وأنشطة الكلية ومواعيدها.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   كلية الحاسبات والمعلومات والذكاء الاصطناعي – جامعة اللوتس
+   الهوية البصرية + التنسيقات المشتركة (RTL)
+   ========================================================= */
+
+:root {
+  --blue-900: #0a2a5e;
+  --blue-800: #0d3576;
+  --blue-700: #114390;
+  --blue-600: #1656b4;
+  --blue-500: #1f6fd6;
+  --blue-400: #4a90e2;
+  --blue-200: #bcd3f2;
+  --blue-100: #e8f1fc;
+  --blue-50:  #f4f8fe;
+  --gold:     #f0a500;
+  --gold-dark:#c98700;
+  --teal:     #0fb5ba;
+  --ink:      #16233a;
+  --muted:    #5c6b82;
+  --line:     #e2e8f2;
+  --bg:       #ffffff;
+  --bg-soft:  #f6f9fd;
+  --white:    #ffffff;
+  --shadow-sm: 0 2px 8px rgba(16,42,94,.06);
+  --shadow-md: 0 8px 28px rgba(16,42,94,.10);
+  --shadow-lg: 0 18px 50px rgba(16,42,94,.16);
+  --radius:   14px;
+  --radius-sm: 10px;
+  --maxw: 1200px;
+  --header-h: 76px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+body {
+  font-family: "Tajawal", "Cairo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.85;
+  direction: rtl;
+  text-align: right;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--blue-600); text-decoration: none; transition: color .2s; }
+a:hover { color: var(--blue-800); }
+
+img { max-width: 100%; display: block; }
+
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
+
+section { position: relative; }
+
+h1,h2,h3,h4 { line-height: 1.35; color: var(--blue-900); font-weight: 800; }
+
+/* ---------- Top bar ---------- */
+.topbar {
+  background: var(--blue-900);
+  color: #cfe0f7;
+  font-size: 13.5px;
+}
+.topbar .container {
+  display: flex; justify-content: space-between; align-items: center;
+  min-height: 40px; gap: 14px; flex-wrap: wrap;
+}
+.topbar a { color: #cfe0f7; }
+.topbar a:hover { color: #fff; }
+.topbar .tb-info { display: flex; gap: 20px; flex-wrap: wrap; }
+.topbar .tb-info span { display: inline-flex; align-items: center; gap: 6px; }
+.topbar .tb-social { display: flex; gap: 14px; align-items: center; }
+.topbar .tb-social a { font-weight: 700; }
+
+/* ---------- Header / Nav ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  min-height: var(--header-h); gap: 18px;
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand .logo-mark {
+  width: 46px; height: 46px; border-radius: 12px; flex: none;
+  background: linear-gradient(135deg, var(--blue-700), var(--blue-500));
+  display: grid; place-items: center; color: #fff; font-weight: 900;
+  font-size: 20px; box-shadow: var(--shadow-sm);
+}
+.brand .brand-txt b { display: block; font-size: 16px; color: var(--blue-900); line-height: 1.3; }
+.brand .brand-txt span { font-size: 12px; color: var(--muted); }
+
+.menu { display: flex; align-items: center; gap: 2px; list-style: none; }
+.menu > li { position: relative; }
+.menu > li > a {
+  display: block; padding: 10px 12px; font-weight: 700; font-size: 14.5px;
+  color: var(--ink); border-radius: 8px;
+}
+.menu > li > a:hover, .menu > li.active > a { color: var(--blue-700); background: var(--blue-50); }
+.menu > li.has-sub > a::after { content: "▾"; font-size: 10px; margin-inline-start: 5px; color: var(--muted); }
+
+.submenu {
+  position: absolute; top: 100%; inset-inline-start: 0;
+  background: #fff; border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: var(--shadow-md); min-width: 230px; padding: 8px;
+  list-style: none; opacity: 0; visibility: hidden; transform: translateY(8px);
+  transition: .18s; z-index: 120;
+}
+.menu > li.has-sub:hover .submenu { opacity: 1; visibility: visible; transform: translateY(0); }
+.submenu li a { display: block; padding: 9px 12px; border-radius: 8px; font-size: 14px; color: var(--ink); font-weight: 600; }
+.submenu li a:hover { background: var(--blue-50); color: var(--blue-700); }
+
+.nav-cta {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #fff !important; padding: 10px 18px; border-radius: 30px;
+  font-weight: 800; font-size: 14px; box-shadow: 0 6px 16px rgba(240,165,0,.35);
+}
+.nav-cta:hover { color: #fff; transform: translateY(-1px); }
+
+.nav-toggle {
+  display: none; background: var(--blue-50); border: 1px solid var(--line);
+  width: 46px; height: 44px; border-radius: 10px; cursor: pointer;
+  font-size: 20px; color: var(--blue-700);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+  padding: 12px 24px; border-radius: 30px; font-weight: 800; font-size: 15px;
+  border: none; transition: .2s; text-decoration: none;
+}
+.btn-primary { background: linear-gradient(135deg, var(--blue-700), var(--blue-500)); color: #fff; box-shadow: 0 8px 20px rgba(21,86,180,.30); }
+.btn-primary:hover { color: #fff; transform: translateY(-2px); box-shadow: 0 12px 26px rgba(21,86,180,.40); }
+.btn-gold { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: #fff; }
+.btn-gold:hover { color: #fff; transform: translateY(-2px); }
+.btn-outline { background: #fff; color: var(--blue-700); border: 2px solid var(--blue-200); }
+.btn-outline:hover { background: var(--blue-50); color: var(--blue-800); }
+.btn-ghost { background: rgba(255,255,255,.15); color: #fff; border: 1.5px solid rgba(255,255,255,.55); }
+.btn-ghost:hover { background: rgba(255,255,255,.28); color: #fff; }
+
+/* ---------- Hero / Slider ---------- */
+.hero {
+  position: relative; color: #fff; overflow: hidden;
+  background: linear-gradient(120deg, var(--blue-900) 0%, var(--blue-700) 55%, var(--blue-500) 100%);
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(240,165,0,.22), transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(15,181,186,.20), transparent 45%);
+}
+.hero-inner { position: relative; z-index: 2; padding: 84px 0 92px; }
+.slide { display: none; animation: fade .6s ease; }
+.slide.active { display: block; }
+@keyframes fade { from { opacity: 0; transform: translateY(12px);} to {opacity:1; transform:none;} }
+.hero .eyebrow {
+  display: inline-block; background: rgba(255,255,255,.14); color: #fff;
+  padding: 7px 16px; border-radius: 30px; font-weight: 700; font-size: 13.5px;
+  border: 1px solid rgba(255,255,255,.28); margin-bottom: 18px;
+}
+.hero h1 { color: #fff; font-size: clamp(30px, 5vw, 50px); margin-bottom: 16px; }
+.hero p { font-size: clamp(16px, 2.4vw, 20px); max-width: 680px; color: #e4eefc; margin-bottom: 28px; }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-dots { display: flex; gap: 10px; margin-top: 40px; }
+.hero-dots button {
+  width: 40px; height: 6px; border-radius: 6px; border: none; cursor: pointer;
+  background: rgba(255,255,255,.35); transition: .2s;
+}
+.hero-dots button.active { background: var(--gold); width: 58px; }
+
+/* ---------- Stats ---------- */
+.stats {
+  background: #fff; margin-top: -46px; position: relative; z-index: 5;
+}
+.stats-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+  background: #fff; border: 1px solid var(--line); border-radius: 18px;
+  padding: 30px; box-shadow: var(--shadow-md);
+}
+.stat { text-align: center; padding: 6px; }
+.stat .num { font-size: 40px; font-weight: 900; color: var(--blue-700); line-height: 1; }
+.stat .num span { color: var(--gold); }
+.stat .lbl { color: var(--muted); font-weight: 700; margin-top: 8px; font-size: 15px; }
+
+/* ---------- Sections ---------- */
+.section { padding: 78px 0; }
+.section.soft { background: var(--bg-soft); }
+.section-head { text-align: center; max-width: 760px; margin: 0 auto 46px; }
+.section-head .kicker {
+  color: var(--gold-dark); font-weight: 800; letter-spacing: .5px;
+  font-size: 14px; text-transform: uppercase; margin-bottom: 8px; display: block;
+}
+.section-head h2 { font-size: clamp(26px, 3.6vw, 38px); }
+.section-head p { color: var(--muted); margin-top: 12px; font-size: 17px; }
+.divider-line { width: 66px; height: 4px; border-radius: 4px; background: linear-gradient(90deg,var(--gold),var(--blue-500)); margin: 14px auto 0; }
+
+/* ---------- Cards grid ---------- */
+.grid { display: grid; gap: 24px; }
+.grid.cols-2 { grid-template-columns: repeat(2,1fr); }
+.grid.cols-3 { grid-template-columns: repeat(3,1fr); }
+.grid.cols-4 { grid-template-columns: repeat(4,1fr); }
+
+.card {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 26px; box-shadow: var(--shadow-sm); transition: .25s; height: 100%;
+}
+.card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: #cfe0f7; }
+.card .ic {
+  width: 56px; height: 56px; border-radius: 14px; display: grid; place-items: center;
+  font-size: 26px; margin-bottom: 16px;
+  background: var(--blue-50); color: var(--blue-700);
+}
+.card h3 { font-size: 19px; margin-bottom: 8px; }
+.card p { color: var(--muted); font-size: 15px; }
+.card .more { margin-top: 14px; font-weight: 800; color: var(--blue-600); display: inline-block; }
+
+/* program cards */
+.prog-card { position: relative; overflow: hidden; }
+.prog-card .top-strip { height: 5px; border-radius: 4px; background: linear-gradient(90deg,var(--blue-600),var(--teal)); margin-bottom: 18px; }
+
+/* ---------- News ---------- */
+.news-card { padding: 0; overflow: hidden; }
+.news-card .thumb { height: 172px; background: linear-gradient(135deg,var(--blue-600),var(--blue-400)); position: relative; color:#fff; }
+.news-card .thumb .tag {
+  position: absolute; inset-block-start: 12px; inset-inline-end: 12px;
+  background: var(--gold); color: #fff; padding: 4px 12px; border-radius: 20px;
+  font-size: 12px; font-weight: 800;
+}
+.news-card .thumb .emoji { position: absolute; inset: 0; display: grid; place-items: center; font-size: 54px; opacity: .9; }
+.news-card .body { padding: 20px 22px 24px; }
+.news-card .date { color: var(--muted); font-size: 13px; font-weight: 700; }
+.news-card h3 { font-size: 18px; margin: 8px 0; }
+.news-card p { color: var(--muted); font-size: 14.5px; }
+
+/* ---------- Dean word ---------- */
+.dean {
+  display: grid; grid-template-columns: 280px 1fr; gap: 40px; align-items: center;
+}
+.dean .photo {
+  aspect-ratio: 1/1; border-radius: 20px;
+  background: linear-gradient(135deg,var(--blue-800),var(--blue-500));
+  display: grid; place-items: center; color: #fff; font-size: 74px; box-shadow: var(--shadow-md);
+}
+.dean blockquote { font-size: 17.5px; color: #34435e; border-inline-start: 4px solid var(--gold); padding-inline-start: 20px; margin-bottom: 18px; }
+.dean .sig b { color: var(--blue-900); font-size: 18px; display: block; }
+.dean .sig span { color: var(--muted); }
+
+/* ---------- Vision / Mission ---------- */
+.vm-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 26px; }
+.vm-card {
+  border-radius: 18px; padding: 34px; color: #fff; position: relative; overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.vm-card.vision { background: linear-gradient(135deg,var(--blue-800),var(--blue-600)); }
+.vm-card.mission { background: linear-gradient(135deg,var(--teal),#0c8a8e); }
+.vm-card .ic { font-size: 40px; margin-bottom: 14px; }
+.vm-card h3 { color: #fff; font-size: 24px; margin-bottom: 12px; }
+.vm-card p { color: #eef6ff; font-size: 16px; }
+
+/* ---------- Page banner ---------- */
+.page-banner {
+  background: linear-gradient(120deg, var(--blue-900), var(--blue-600));
+  color: #fff; padding: 60px 0 54px; position: relative; overflow: hidden;
+}
+.page-banner::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(circle at 88% 15%, rgba(240,165,0,.25), transparent 45%);
+}
+.page-banner .container { position: relative; z-index: 2; }
+.page-banner h1 { color: #fff; font-size: clamp(28px,4.4vw,44px); }
+.breadcrumb { margin-top: 12px; color: #cfe0f7; font-size: 14.5px; font-weight: 600; }
+.breadcrumb a { color: #cfe0f7; }
+.breadcrumb a:hover { color: #fff; }
+
+/* ---------- Content prose ---------- */
+.prose { font-size: 16.5px; color: #33425c; }
+.prose h2 { font-size: 27px; margin: 30px 0 14px; }
+.prose h3 { font-size: 21px; margin: 24px 0 10px; color: var(--blue-800); }
+.prose p { margin-bottom: 15px; }
+.prose ul, .prose ol { margin: 0 22px 16px; }
+.prose li { margin-bottom: 9px; }
+.prose ul li::marker { color: var(--gold-dark); }
+
+.lead { font-size: 19px; color: #33425c; font-weight: 500; }
+
+/* callout / info box */
+.callout {
+  background: var(--blue-50); border: 1px solid #d4e5fb; border-inline-start: 5px solid var(--blue-500);
+  border-radius: 12px; padding: 20px 22px; margin: 20px 0;
+}
+.callout.gold { background: #fff8e9; border-color: #f4dfa6; border-inline-start-color: var(--gold); }
+.callout.teal { background: #e9fbfb; border-color: #b6ecee; border-inline-start-color: var(--teal); }
+.callout h4 { margin-bottom: 6px; }
+
+/* ---------- Layout with sidebar (quality) ---------- */
+.with-sidebar { display: grid; grid-template-columns: 270px 1fr; gap: 40px; align-items: start; }
+.side-nav {
+  position: sticky; top: 92px; background: #fff; border: 1px solid var(--line);
+  border-radius: 14px; padding: 14px; box-shadow: var(--shadow-sm);
+}
+.side-nav h4 { font-size: 15px; color: var(--muted); margin: 8px 10px 10px; text-transform: uppercase; letter-spacing: .5px; }
+.side-nav a {
+  display: block; padding: 9px 12px; border-radius: 9px; color: var(--ink);
+  font-weight: 600; font-size: 14.5px; margin-bottom: 2px;
+}
+.side-nav a:hover, .side-nav a.active { background: var(--blue-50); color: var(--blue-700); }
+
+/* anchored block */
+.qblock { scroll-margin-top: 92px; padding: 34px 0; border-bottom: 1px dashed var(--line); }
+.qblock:last-child { border-bottom: none; }
+.qblock h2 { display: flex; align-items: center; gap: 10px; font-size: 26px; margin-bottom: 14px; }
+.qblock h2 .badge-ic {
+  width: 40px; height: 40px; border-radius: 11px; background: var(--blue-50);
+  color: var(--blue-700); display: grid; place-items: center; font-size: 20px; flex: none;
+}
+
+/* ---------- Tables ---------- */
+.table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--line); box-shadow: var(--shadow-sm); }
+table.tbl { width: 100%; border-collapse: collapse; font-size: 15px; background: #fff; min-width: 520px; }
+table.tbl thead th { background: var(--blue-700); color: #fff; padding: 13px 16px; text-align: right; font-weight: 800; }
+table.tbl tbody td { padding: 12px 16px; border-bottom: 1px solid var(--line); color: #34435e; }
+table.tbl tbody tr:nth-child(even) { background: var(--blue-50); }
+table.tbl tbody tr:hover { background: #eef5ff; }
+
+/* ---------- Doc / download list ---------- */
+.doc-list { display: grid; gap: 12px; }
+.doc-item {
+  display: flex; align-items: center; gap: 14px; background: #fff;
+  border: 1px solid var(--line); border-radius: 12px; padding: 15px 18px; transition: .2s;
+}
+.doc-item:hover { border-color: #bcd3f2; box-shadow: var(--shadow-sm); transform: translateX(-3px); }
+.doc-item .fic {
+  width: 44px; height: 44px; border-radius: 10px; display: grid; place-items: center;
+  font-weight: 900; font-size: 12px; color: #fff; flex: none;
+}
+.fic.pdf { background: #d9483b; } .fic.doc { background: #2a6fdb; } .fic.xls { background: #1e9e63; }
+.doc-item .meta b { display: block; color: var(--ink); font-size: 15.5px; }
+.doc-item .meta span { color: var(--muted); font-size: 13px; }
+.doc-item .dl { margin-inline-start: auto; color: var(--blue-600); font-weight: 800; white-space: nowrap; }
+
+/* ---------- Committee / people ---------- */
+.person {
+  background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 22px;
+  text-align: center; box-shadow: var(--shadow-sm); transition: .25s;
+}
+.person:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.person .avatar {
+  width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 14px;
+  background: linear-gradient(135deg,var(--blue-700),var(--blue-400));
+  display: grid; place-items: center; color: #fff; font-size: 34px; font-weight: 800;
+}
+.person b { display: block; color: var(--blue-900); font-size: 16.5px; }
+.person .role { color: var(--gold-dark); font-weight: 700; font-size: 14px; margin: 3px 0 8px; }
+.person .dept { color: var(--muted); font-size: 13.5px; }
+
+/* pill list */
+.pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.pill { background: var(--blue-50); color: var(--blue-700); border: 1px solid #d4e5fb; padding: 8px 16px; border-radius: 30px; font-weight: 700; font-size: 14px; }
+
+/* timeline */
+.timeline { position: relative; padding-inline-start: 26px; }
+.timeline::before { content:""; position: absolute; inset-inline-start: 6px; top: 6px; bottom: 6px; width: 3px; background: var(--blue-100); border-radius: 3px; }
+.tl-item { position: relative; margin-bottom: 26px; }
+.tl-item::before { content:""; position: absolute; inset-inline-start: -24px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px #fff, 0 0 0 6px var(--blue-100); }
+.tl-item b { color: var(--blue-800); font-size: 16px; }
+.tl-item .yr { color: var(--gold-dark); font-weight: 800; font-size: 14px; }
+
+/* accordion (FAQ) */
+.acc-item { background: #fff; border: 1px solid var(--line); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+.acc-q { width: 100%; text-align: right; background: none; border: none; cursor: pointer; padding: 18px 20px; font-weight: 800; font-size: 16px; color: var(--blue-900); display: flex; justify-content: space-between; align-items: center; gap: 12px; font-family: inherit; }
+.acc-q:hover { background: var(--blue-50); }
+.acc-q .sign { color: var(--gold-dark); font-size: 22px; flex: none; transition: .2s; }
+.acc-item.open .acc-q .sign { transform: rotate(45deg); }
+.acc-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+.acc-a .inner { padding: 0 20px 18px; color: var(--muted); font-size: 15px; }
+
+/* ---------- Contact ---------- */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
+.field { margin-bottom: 16px; }
+.field label { display: block; font-weight: 700; margin-bottom: 6px; color: var(--ink); font-size: 14.5px; }
+.field input, .field textarea, .field select {
+  width: 100%; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 10px;
+  font-family: inherit; font-size: 15px; background: #fff; transition: .2s;
+}
+.field input:focus, .field textarea:focus, .field select:focus { outline: none; border-color: var(--blue-500); box-shadow: 0 0 0 3px rgba(31,111,214,.12); }
+.info-line { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
+.info-line .ic { width: 46px; height: 46px; border-radius: 12px; background: var(--blue-50); color: var(--blue-700); display: grid; place-items: center; font-size: 20px; flex: none; }
+.info-line b { display: block; color: var(--blue-900); }
+.info-line span { color: var(--muted); font-size: 14.5px; }
+.map-embed { border-radius: 14px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow-sm); }
+.map-embed iframe { width: 100%; height: 300px; border: 0; display: block; }
+
+/* ---------- CTA band ---------- */
+.cta-band {
+  background: linear-gradient(120deg,var(--blue-800),var(--blue-600));
+  color: #fff; border-radius: 22px; padding: 48px; text-align: center; overflow: hidden; position: relative;
+}
+.cta-band::before { content:""; position:absolute; inset:0; background: radial-gradient(circle at 15% 20%, rgba(240,165,0,.25), transparent 40%); }
+.cta-band > * { position: relative; z-index: 2; }
+.cta-band h2 { color: #fff; font-size: 30px; margin-bottom: 10px; }
+.cta-band p { color: #dfeaff; font-size: 17px; margin-bottom: 22px; }
+
+/* logos strip */
+.logos { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; align-items: center; }
+.logo-chip { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px 26px; font-weight: 800; color: var(--muted); box-shadow: var(--shadow-sm); }
+
+/* gallery */
+.gallery { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+.gallery .gi { aspect-ratio: 4/3; border-radius: 12px; display: grid; place-items: center; font-size: 40px; color: #fff; background: linear-gradient(135deg,var(--blue-600),var(--blue-400)); box-shadow: var(--shadow-sm); transition: .25s; cursor: pointer; }
+.gallery .gi:nth-child(3n) { background: linear-gradient(135deg,var(--teal),#0c8a8e); }
+.gallery .gi:nth-child(3n+1) { background: linear-gradient(135deg,var(--gold),var(--gold-dark)); }
+.gallery .gi:hover { transform: scale(1.03); box-shadow: var(--shadow-md); }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--blue-900); color: #c7d6ee; padding: 56px 0 0; margin-top: 20px; }
+.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.3fr; gap: 34px; padding-bottom: 40px; }
+.site-footer h4 { color: #fff; font-size: 17px; margin-bottom: 16px; }
+.site-footer .fbrand b { color: #fff; font-size: 18px; display: block; margin-bottom: 8px; }
+.site-footer p { font-size: 14.5px; color: #b6c7e2; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 9px; }
+.footer-links a { color: #c7d6ee; font-size: 14.5px; }
+.footer-links a:hover { color: var(--gold); }
+.foot-contact li { display: flex; gap: 10px; margin-bottom: 12px; font-size: 14px; color: #b6c7e2; }
+.foot-social { display: flex; gap: 12px; margin-top: 14px; }
+.foot-social a { width: 40px; height: 40px; border-radius: 10px; background: rgba(255,255,255,.08); display: grid; place-items: center; color: #fff; font-weight: 800; }
+.foot-social a:hover { background: var(--gold); color: #fff; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.12); padding: 18px 0; text-align: center; font-size: 13.5px; color: #9fb3d4; }
+
+/* reveal animation */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+  .nav-toggle { display: block; }
+  .menu {
+    position: fixed; inset-block-start: var(--header-h); inset-inline-end: 0;
+    height: calc(100vh - var(--header-h)); width: min(320px, 84vw);
+    background: #fff; flex-direction: column; align-items: stretch;
+    padding: 16px; gap: 4px; box-shadow: var(--shadow-lg); overflow-y: auto;
+    transform: translateX(-110%); transition: transform .3s; border-inline-start: 1px solid var(--line);
+  }
+  .menu.open { transform: translateX(0) !important; }
+  .menu > li > a { padding: 12px 14px; }
+  .submenu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; padding: 4px 10px 8px; background: var(--bg-soft); }
+  .menu > li.has-sub:hover .submenu { transform: none; }
+  .stats-grid { grid-template-columns: repeat(2,1fr); }
+  .grid.cols-4 { grid-template-columns: repeat(2,1fr); }
+  .grid.cols-3 { grid-template-columns: repeat(2,1fr); }
+  .dean { grid-template-columns: 1fr; text-align: center; }
+  .dean .photo { max-width: 220px; margin: 0 auto; }
+  .with-sidebar { grid-template-columns: 1fr; }
+  .side-nav { position: static; }
+  .vm-grid, .contact-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .gallery { grid-template-columns: repeat(3,1fr); }
+}
+@media (max-width: 620px) {
+  .topbar .tb-info { display: none; }
+  .stats-grid { grid-template-columns: 1fr 1fr; padding: 20px; gap: 12px; }
+  .stat .num { font-size: 32px; }
+  .grid.cols-2, .grid.cols-3, .grid.cols-4 { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: repeat(2,1fr); }
+  .cta-band { padding: 32px 22px; }
+  .section { padding: 54px 0; }
+  .brand .brand-txt span { display: none; }
+}
+
+/* =========================================================
+   طبقة تحسينات الـ UI والأنيميشن (Enhancements)
+   ========================================================= */
+
+@media (prefers-reduced-motion: no-preference) {
+
+/* ---- شريط تقدّم القراءة أعلى الصفحة ---- */
+.scroll-progress {
+  position: fixed; inset-block-start: 0; inset-inline-start: 0; height: 3px; width: 0%;
+  background: linear-gradient(90deg, var(--gold), var(--blue-500), var(--teal));
+  z-index: 200; transition: width .1s linear; box-shadow: 0 0 10px rgba(31,111,214,.5);
+}
+
+/* ---- هيدر يتغيّر عند التمرير ---- */
+.site-header { transition: box-shadow .3s, background .3s; }
+.site-header.scrolled { box-shadow: 0 6px 24px rgba(16,42,94,.12); background: rgba(255,255,255,.98); }
+.site-header.scrolled .nav { min-height: 66px; }
+.nav { transition: min-height .3s; }
+
+/* ---- خلفية الهيرو المتحركة ---- */
+.hero { background-size: 180% 180%; animation: heroGradient 18s ease infinite; }
+@keyframes heroGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* أشكال عائمة في الهيرو */
+.hero .float-shape {
+  position: absolute; border-radius: 50%; z-index: 1; pointer-events: none;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), rgba(255,255,255,0) 70%);
+  filter: blur(2px);
+}
+.hero .fs1 { width: 260px; height: 260px; inset-block-start: -60px; inset-inline-start: 6%; animation: floatY 9s ease-in-out infinite; }
+.hero .fs2 { width: 180px; height: 180px; inset-block-end: 8%; inset-inline-end: 12%; animation: floatY 11s ease-in-out infinite reverse; background: radial-gradient(circle at 30% 30%, rgba(240,165,0,.28), rgba(240,165,0,0) 70%); }
+.hero .fs3 { width: 120px; height: 120px; inset-block-start: 30%; inset-inline-end: 30%; animation: floatY 7s ease-in-out infinite; background: radial-gradient(circle at 30% 30%, rgba(15,181,186,.30), rgba(15,181,186,0) 70%); }
+@keyframes floatY {
+  0%,100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-26px) translateX(12px); }
+}
+
+/* دخول عناصر الهيرو */
+.hero .slide.active .eyebrow { animation: heroUp .6s .05s both; }
+.hero .slide.active h1 { animation: heroUp .6s .18s both; }
+.hero .slide.active p { animation: heroUp .6s .30s both; }
+.hero .slide.active .hero-actions { animation: heroUp .6s .42s both; }
+@keyframes heroUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+
+/* دخول عنوان البانر الداخلي */
+.page-banner h1 { animation: heroUp .6s .05s both; }
+.page-banner .breadcrumb { animation: heroUp .6s .18s both; }
+
+/* ---- كشف متدرّج (stagger) ---- */
+.reveal { transition: opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1); }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ---- تحسين البطاقات ---- */
+.card { transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s, border-color .3s; will-change: transform; }
+.card .ic { transition: transform .35s cubic-bezier(.34,1.56,.64,1), background .3s, color .3s; }
+.card:hover .ic { transform: translateY(-3px) scale(1.08) rotate(-4deg); background: var(--blue-700); color: #fff; }
+.prog-card .top-strip { transition: transform .4s; transform-origin: right; }
+.prog-card:hover .top-strip { transform: scaleX(1.02); }
+
+/* لمعة تمر على البطاقة */
+.card::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.35) 50%, transparent 70%);
+  transform: translateX(-140%); transition: transform .7s; opacity: 0;
+}
+.card { position: relative; overflow: hidden; }
+.card:hover::after { transform: translateX(140%); opacity: 1; }
+
+/* بطاقات الأخبار: تكبير الأيقونة */
+.news-card .thumb .emoji { transition: transform .4s cubic-bezier(.34,1.56,.64,1); }
+.news-card:hover .thumb .emoji { transform: scale(1.18) rotate(6deg); }
+
+/* عناصر التحميل والأشخاص */
+.doc-item .fic { transition: transform .3s; }
+.doc-item:hover .fic { transform: scale(1.1) rotate(-5deg); }
+.person .avatar { transition: transform .35s cubic-bezier(.34,1.56,.64,1); }
+.person:hover .avatar { transform: scale(1.08) translateY(-3px); }
+
+/* أزرار: توهّج خفيف */
+.btn { position: relative; overflow: hidden; }
+.btn::before {
+  content: ""; position: absolute; inset: 0; background: rgba(255,255,255,.25);
+  transform: translateX(-120%) skewX(-18deg); transition: transform .5s;
+}
+.btn:hover::before { transform: translateX(120%) skewX(-18deg); }
+
+/* روابط القائمة: خط سفلي متحرك */
+.menu > li > a { position: relative; }
+.menu > li > a::before {
+  content: ""; position: absolute; inset-block-end: 4px; inset-inline-start: 12px; inset-inline-end: 12px;
+  height: 2px; background: var(--gold); border-radius: 2px; transform: scaleX(0); transform-origin: right; transition: transform .28s;
+}
+.menu > li:hover > a::before, .menu > li.active > a::before { transform: scaleX(1); }
+
+/* نقاط السلايدر */
+.hero-dots button { transition: width .3s, background .3s; }
+
+/* عدّاد الإحصائيات: نبض خفيف عند الظهور */
+.stat.pop .num { animation: popNum .5s cubic-bezier(.34,1.56,.64,1) both; }
+@keyframes popNum { from { transform: scale(.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* حركة القائمة الجانبية النشطة */
+.side-nav a { position: relative; transition: background .2s, color .2s, padding-inline-start .2s; }
+.side-nav a.active { padding-inline-start: 18px; }
+.side-nav a.active::before {
+  content: ""; position: absolute; inset-block: 8px; inset-inline-start: 6px; width: 3px; border-radius: 3px;
+  background: var(--gold);
+}
+
+/* الأكورديون: دخول أنعم للإجابة */
+.acc-a .inner { transition: opacity .3s; }
+
+/* ---- زر العودة لأعلى ---- */
+.to-top {
+  position: fixed; inset-block-end: 26px; inset-inline-start: 26px; z-index: 150;
+  width: 50px; height: 50px; border-radius: 50%; border: none; cursor: pointer;
+  background: linear-gradient(135deg, var(--blue-700), var(--blue-500)); color: #fff;
+  font-size: 22px; box-shadow: var(--shadow-md); display: grid; place-items: center;
+  opacity: 0; visibility: hidden; transform: translateY(18px) scale(.8); transition: .3s;
+}
+.to-top.show { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+.to-top:hover { transform: translateY(-3px) scale(1.06); box-shadow: var(--shadow-lg); }
+
+} /* end reduced-motion guard */
+
+/* دخول أساسي حتى مع reduced-motion (بدون حركة) */
+.to-top { position: fixed; inset-block-end: 26px; inset-inline-start: 26px; }
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <div class="tb-info">
+      <span>📍 المنيا الجديدة – بجوار كمين الصفا</span>
+      <span>✉️ <a href="mailto:info@lum.edu.eg">info@lum.edu.eg</a></span>
+      <span>☎️ <a href="tel:19684">الخط الساخن 19684</a></span>
+    </div>
+    <div class="tb-social">
+      <a href="https://www.facebook.com/profile.php?id=61561794437506" target="_blank" rel="noopener">فيسبوك</a>
+      <a href="https://www.linkedin.com/company/lum-egypt/" target="_blank" rel="noopener">لينكدإن</a>
+      <a href="https://www.instagram.com/lum_egypt" target="_blank" rel="noopener">إنستجرام</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      <span class="logo-mark">FCI</span>
+      <span class="brand-txt">
+        <b>كلية الحاسبات والمعلومات والذكاء الاصطناعي</b>
+        <span>جامعة اللوتس – المنيا</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="القائمة" aria-expanded="false">☰</button>
+    <ul class="menu">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li class="has-sub">
+        <a href="about.html">عن الكلية</a>
+        <ul class="submenu">
+          <li><a href="about.html#nabza">نبذة عن الكلية</a></li>
+          <li><a href="about.html#vision">الرؤية والرسالة</a></li>
+          <li><a href="about.html#values">القيم والأهداف</a></li>
+          <li><a href="about.html#dean">كلمة العميد</a></li>
+          <li><a href="about.html#structure">الهيكل التنظيمي</a></li>
+        </ul>
+      </li>
+      <li><a href="programs.html">البرامج الأكاديمية</a></li>
+      <li><a href="admission.html">القبول والتسجيل</a></li>
+      <li class="has-sub">
+        <a href="students.html">الطلاب</a>
+        <ul class="submenu">
+          <li><a href="students.html">دليل الطالب والخدمات</a></li>
+          <li><a href="faculty.html">أعضاء هيئة التدريس</a></li>
+          <li><a href="activities.html">الأنشطة الطلابية</a></li>
+        </ul>
+      </li>
+      <li><a href="quality.html">وحدة ضمان الجودة</a></li>
+      <li class="has-sub">
+        <a href="news.html">الأخبار والفعاليات</a>
+        <ul class="submenu">
+          <li><a href="news.html">مركز الأخبار</a></li>
+          <li><a href="research.html">البحث العلمي</a></li>
+          <li><a href="activities.html">الأنشطة والفعاليات</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">اتصل بنا</a></li>
+      <li><a href="https://sis.lum.edu.eg/Defaultapplicantnew.aspx" target="_blank" rel="noopener" class="nav-cta">التحق الآن</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="page-banner">
+  <div class="container">
+    <h1>الفعاليات</h1>
+    <div class="breadcrumb"><a href="index.html">الرئيسية</a> / الفعاليات</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">أجندة الكلية</span>
+      <h2>المؤتمرات والندوات وورش العمل</h2>
+      <div class="divider-line"></div>
+    </div>
+    <div class="grid cols-3">
+      <div class="card"><div class="ic">🎙️</div><h3>المؤتمرات</h3><p>مؤتمرات علمية محلية ودولية في مجالات الحاسبات والذكاء الاصطناعي.</p></div>
+      <div class="card"><div class="ic">📢</div><h3>الندوات</h3><p>ندوات توعوية وعلمية بمشاركة خبراء وأكاديميين.</p></div>
+      <div class="card"><div class="ic">🛠️</div><h3>ورش العمل</h3><p>ورش تدريبية عملية في التقنيات الحديثة والأدوات المتخصصة.</p></div>
+      <div class="card"><div class="ic">🏅</div><h3>المسابقات</h3><p>مسابقات برمجية وتقنية لتحفيز الابتكار بين الطلاب.</p></div>
+      <div class="card"><div class="ic">🎉</div><h3>الأنشطة</h3><p>فعاليات ثقافية ورياضية وفنية على مدار العام.</p></div>
+      <div class="card"><div class="ic">📷</div><h3>صور الفعاليات</h3><p>ألبومات صور توثّق أبرز فعاليات وأنشطة الكلية.</p></div>
+    </div>
+
+    <div class="section-head" style="margin-top:56px"><span class="kicker">قريبًا</span><h2>مواعيد الفعاليات القادمة</h2><div class="divider-line"></div></div>
+    <div class="table-wrap">
+      <table class="tbl">
+        <thead><tr><th>الفعالية</th><th>النوع</th><th>الموعد</th><th>المكان</th></tr></thead>
+        <tbody>
+          <tr><td>يوم الذكاء الاصطناعي</td><td>مؤتمر</td><td>أكتوبر 2026</td><td>قاعة المؤتمرات الكبرى</td></tr>
+          <tr><td>هاكاثون الأمن السيبراني</td><td>مسابقة</td><td>نوفمبر 2026</td><td>معامل الكلية</td></tr>
+          <tr><td>ورشة تحليل البيانات</td><td>ورشة عمل</td><td>ديسمبر 2026</td><td>معمل علوم البيانات</td></tr>
+          <tr><td>ندوة أخلاقيات التقنية</td><td>ندوة</td><td>فبراير 2027</td><td>المدرج الرئيسي</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="fbrand">
+        <b>كلية الحاسبات والمعلومات والذكاء الاصطناعي</b>
+        <p>الموقع الرسمي لكلية الحاسبات والمعلومات والذكاء الاصطناعي بجامعة اللوتس — بيئة تعليمية وبحثية متميزة تلتزم بمعايير الجودة والاعتماد.</p>
+        <div class="foot-social">
+          <a href="https://www.facebook.com/profile.php?id=61561794437506" target="_blank" rel="noopener" title="فيسبوك">f</a>
+          <a href="https://www.linkedin.com/company/lum-egypt/" target="_blank" rel="noopener" title="لينكدإن">in</a>
+          <a href="https://www.instagram.com/lum_egypt" target="_blank" rel="noopener" title="إنستجرام">ig</a>
+        </div>
+      </div>
+      <div>
+        <h4>روابط سريعة</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">عن الكلية</a></li>
+          <li><a href="programs.html">البرامج الأكاديمية</a></li>
+          <li><a href="admission.html">القبول والتسجيل</a></li>
+          <li><a href="quality.html">وحدة ضمان الجودة</a></li>
+          <li><a href="research.html">البحث العلمي</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>خدمات الطلاب</h4>
+        <ul class="footer-links">
+          <li><a href="students.html">دليل الطالب</a></li>
+          <li><a href="faculty.html">أعضاء هيئة التدريس</a></li>
+          <li><a href="activities.html">الأنشطة الطلابية</a></li>
+          <li><a href="https://sis.lum.edu.eg/Default.aspx" target="_blank" rel="noopener">بوابة الطالب</a></li>
+          <li><a href="https://lms.lum.edu.eg/login/index.php" target="_blank" rel="noopener">التعليم الإلكتروني</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>تواصل معنا</h4>
+        <ul class="foot-contact footer-links">
+          <li>📍 جامعة اللوتس – منطقة الامتداد بالمنيا الجديدة – بجوار كمين الصفا</li>
+          <li>✉️ <a href="mailto:info@lum.edu.eg">info@lum.edu.eg</a></li>
+          <li>☎️ <a href="tel:19684">الخط الساخن: 19684</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    جميع الحقوق محفوظة © <span data-year>2026</span> كلية الحاسبات والمعلومات والذكاء الاصطناعي – جامعة اللوتس بالمنيا.
+  </div>
+</footer>
+
+<script>
+/* الوظائف المشتركة لموقع كلية الحاسبات - جامعة اللوتس */
+(function () {
+  "use strict";
+
+  /* ---- تفعيل رابط الصفحة الحالية في القائمة ---- */
+  (function () {
+    let page = location.pathname.split("/").pop() || "index.html";
+    if (page === "") page = "index.html";
+    document.querySelectorAll(".menu > li").forEach(function (li) {
+      const link = li.querySelector(":scope > a");
+      if (!link) return;
+      const href = (link.getAttribute("href") || "").split("#")[0].split("/").pop();
+      if (href === page) li.classList.add("active");
+      // تفعيل القائمة الأم لو الصفحة داخل قائمة فرعية
+      li.querySelectorAll(".submenu a").forEach(function (sa) {
+        const sh = (sa.getAttribute("href") || "").split("#")[0].split("/").pop();
+        if (sh === page) li.classList.add("active");
+      });
+    });
+  })();
+
+  /* ---- قائمة الموبايل ---- */
+  const toggle = document.querySelector(".nav-toggle");
+  const menu = document.querySelector(".menu");
+  if (toggle && menu) {
+    toggle.addEventListener("click", function () {
+      menu.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", menu.classList.contains("open"));
+    });
+    // إغلاق القائمة عند الضغط على رابط
+    menu.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () {
+        if (a.getAttribute("href") && a.getAttribute("href") !== "#") {
+          menu.classList.remove("open");
+        }
+      });
+    });
+    // فتح القوائم الفرعية على الموبايل بالضغط
+    menu.querySelectorAll(".has-sub > a").forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        if (window.innerWidth <= 992) {
+          const href = a.getAttribute("href");
+          if (!href || href === "#") { e.preventDefault(); }
+        }
+      });
+    });
+  }
+
+  /* ---- السلايدر الرئيسي ---- */
+  const slides = document.querySelectorAll(".hero .slide");
+  const dots = document.querySelectorAll(".hero-dots button");
+  if (slides.length > 1) {
+    let idx = 0, timer;
+    function show(n) {
+      slides.forEach((s, i) => s.classList.toggle("active", i === n));
+      dots.forEach((d, i) => d.classList.toggle("active", i === n));
+      idx = n;
+    }
+    function next() { show((idx + 1) % slides.length); }
+    dots.forEach((d, i) => d.addEventListener("click", function () { show(i); reset(); }));
+    function reset() { clearInterval(timer); timer = setInterval(next, 6000); }
+    reset();
+  }
+
+  /* ---- الأكورديون (الأسئلة الشائعة) ---- */
+  document.querySelectorAll(".acc-q").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      const item = btn.closest(".acc-item");
+      const ans = item.querySelector(".acc-a");
+      const isOpen = item.classList.contains("open");
+      if (isOpen) {
+        item.classList.remove("open");
+        ans.style.maxHeight = null;
+      } else {
+        item.classList.add("open");
+        ans.style.maxHeight = ans.scrollHeight + "px";
+      }
+    });
+  });
+
+  /* ---- عدّاد الإحصائيات ---- */
+  const counters = document.querySelectorAll("[data-count]");
+  const runCounter = function (el) {
+    const target = +el.getAttribute("data-count");
+    const suffix = el.getAttribute("data-suffix") || "";
+    let cur = 0;
+    const step = Math.max(1, Math.ceil(target / 60));
+    const iv = setInterval(function () {
+      cur += step;
+      if (cur >= target) { cur = target; clearInterval(iv); }
+      el.textContent = cur.toLocaleString("ar-EG") + suffix;
+    }, 24);
+  };
+
+  /* ---- كشف العناصر عند التمرير + العداد ---- */
+  if ("IntersectionObserver" in window) {
+    const obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          if (e.target.hasAttribute("data-count")) { runCounter(e.target); }
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll(".reveal, [data-count]").forEach(el => obs.observe(el));
+  } else {
+    document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
+  }
+
+  /* ---- تفعيل رابط القائمة الجانبية أثناء التمرير ---- */
+  const sideLinks = document.querySelectorAll(".side-nav a[href^='#']");
+  const blocks = document.querySelectorAll(".qblock[id]");
+  if (sideLinks.length && blocks.length && "IntersectionObserver" in window) {
+    const sObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          const id = e.target.getAttribute("id");
+          sideLinks.forEach(l => l.classList.toggle("active", l.getAttribute("href") === "#" + id));
+        }
+      });
+    }, { rootMargin: "-40% 0px -55% 0px" });
+    blocks.forEach(b => sObs.observe(b));
+  }
+
+  /* ---- نموذج الاتصال (تجريبي – ستاتيك) ---- */
+  document.querySelectorAll("form[data-demo]").forEach(function (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const note = form.querySelector(".form-note");
+      if (note) {
+        note.style.display = "block";
+        note.textContent = "✔ شكرًا لك! تم استلام رسالتك بنجاح، وسنتواصل معك قريبًا. (نموذج تجريبي)";
+      }
+      form.reset();
+    });
+  });
+
+  /* ---- سنة الفوتر ---- */
+  const yr = document.querySelector("[data-year]");
+  if (yr) { yr.textContent = new Date().getFullYear(); }
+})();
+
+/* =========================================================
+   طبقة تحسينات الـ UI والأنيميشن (Enhancements)
+   ========================================================= */
+(function () {
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- شريط تقدّم القراءة ---- */
+  var bar = document.createElement("div");
+  bar.className = "scroll-progress";
+  document.body.appendChild(bar);
+
+  /* ---- زر العودة لأعلى ---- */
+  var toTop = document.createElement("button");
+  toTop.className = "to-top";
+  toTop.setAttribute("aria-label", "العودة إلى الأعلى");
+  toTop.innerHTML = "↑";
+  document.body.appendChild(toTop);
+  toTop.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+  });
+
+  /* ---- هيدر متغيّر عند التمرير + تحديث الشريط والزر ---- */
+  var header = document.querySelector(".site-header");
+  function onScroll() {
+    var st = window.pageYOffset || document.documentElement.scrollTop;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (st / h) * 100 : 0) + "%";
+    if (header) header.classList.toggle("scrolled", st > 12);
+    toTop.classList.toggle("show", st > 400);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* ---- أشكال عائمة داخل الهيرو ---- */
+  var hero = document.querySelector(".hero");
+  if (hero && !reduce) {
+    ["fs1", "fs2", "fs3"].forEach(function (c) {
+      var s = document.createElement("span");
+      s.className = "float-shape " + c;
+      hero.insertBefore(s, hero.firstChild);
+    });
+  }
+
+  /* ---- كشف متدرّج تلقائي لكل الصفحات ---- */
+  // عناصر يُضاف لها reveal إن لم تكن موجودة
+  var autoSel = ".card, .qblock, .person, .doc-item, .vm-card, .table-wrap, .acc-item, .info-line, .timeline .tl-item, .logo-chip, .gallery .gi, .pill";
+  var tagged = [];
+  document.querySelectorAll(autoSel).forEach(function (el) {
+    if (!el.classList.contains("reveal")) {
+      el.classList.add("reveal");
+      tagged.push(el);
+    }
+  });
+
+  // ترقيم متدرّج داخل كل مجموعة (شبكة/قائمة) لعمل stagger
+  function stagger(containerSel, childSel) {
+    document.querySelectorAll(containerSel).forEach(function (grid) {
+      var kids = grid.querySelectorAll(":scope > " + childSel);
+      kids.forEach(function (k, i) {
+        if (k.classList.contains("reveal")) {
+          k.style.transitionDelay = Math.min(i * 70, 420) + "ms";
+        }
+      });
+    });
+  }
+  stagger(".grid", ".card, .person, .stat");
+  stagger(".doc-list", ".doc-item");
+  stagger(".gallery", ".gi");
+  stagger(".pills", ".pill");
+
+  if ("IntersectionObserver" in window) {
+    var obs2 = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); obs2.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    tagged.forEach(function (el) { obs2.observe(el); });
+  } else {
+    tagged.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  /* ---- نبض أرقام الإحصائيات عند الظهور ---- */
+  if ("IntersectionObserver" in window) {
+    var sObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("pop"); sObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.4 });
+    document.querySelectorAll(".stat").forEach(function (s) { sObs.observe(s); });
+  }
+})();
+
+</script>
+</body>
+</html>
